@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShĀrt Studios | Arquitectura Tecnológica, Software & Videojuegos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#inicio" class="brand" aria-label="ShĀrt Studios Inicio">
+                <svg class="logo-svg" viewBox="0 0 360 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="metalFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#FFFFFF" />
+                            <stop offset="55%" stop-color="#E4E7EC" />
+                            <stop offset="100%" stop-color="#9CA3AF" />
+                        </linearGradient>
+                        <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+                            <stop offset="50%" stop-color="#94A3B8" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.9" />
+                        </linearGradient>
+                        <filter id="logoGlow" x="-10%" y="-10%" width="120%" height="120%">
+                            <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.8" />
+                        </filter>
+                    </defs>
+                    <path d="M22 65 C22 25, 75 18, 125 25 C175 32, 225 18, 285 22 C328 25, 345 55, 338 92 C331 128, 290 138, 240 126 C190 114, 145 138, 85 136 C35 134, 22 105, 22 65 Z" fill="#0B0C10" stroke="url(#rimGrad)" stroke-width="3.5" filter="url(#logoGlow)" />
+                    <path d="M30 68 C30 34, 78 27, 125 33 C172 39, 222 26, 280 30 C318 33, 334 58, 328 89 C322 120, 285 129, 238 118 C191 107, 145 129, 88 127 C42 125, 30 100, 30 68 Z" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" />
+                    <rect x="172" y="34" width="32" height="5.5" rx="2.75" fill="url(#metalFill)" />
+                    <circle cx="286" cy="44" r="6" fill="url(#metalFill)" />
+                    <circle cx="304" cy="36" r="6.8" fill="url(#metalFill)" />
+                    <circle cx="321" cy="46" r="6" fill="url(#metalFill)" />
+                    <text x="42" y="109" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="800" font-style="italic" font-size="78" letter-spacing="-3" fill="url(#metalFill)">ShArt</text>
+                </svg>
+                <span class="brand-tag">STUDIOS</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#vision">Visión</a>
+                <a href="#divisiones">Divisiones</a>
+                <a href="#ecosistema">Ecosistema</a>
+                <a href="#membresias">Membresías</a>
+                <a href="#contacto" class="btn-nav">Iniciar Alianza</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <div class="eyebrow">
+                    <span class="pulse-dot"></span>
+                    ARQUITECTURA DIGITAL DE NUEVA GENERACIÓN
+                </div>
+                <h1>Construyendo el futuro del <span class="platinum-text">Software, Gaming</span> y la Ingeniería Web.</h1>
+                <p class="hero-subtitle">
+                    ShĀrt Studios es una firma tecnológica de alto impacto dedicada al desarrollo de videojuegos inmersivos, plataformas de software escalables y ecosistemas web de élite diseñados para dominar mercados globales.
+                </p>
+                <div class="hero-actions">
+                    <a href="#ecosistema" class="btn-primary">Explorar Ecosistema</a>
+                    <a href="#membresias" class="btn-secondary">Membresías Corporativas</a>
+                </div>
+            </div>
+
+            <div class="hero-emblem-card reveal">
+                <div class="card-glare"></div>
+                <div class="emblem-header">
+                    <span>CORE // SHART-OS v4.0</span>
+                    <span class="status-badge">OPERATIVO</span>
+                </div>
+                <div class="emblem-center">
+                    <svg class="hero-logo-large" viewBox="0 0 360 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 65 C22 25, 75 18, 125 25 C175 32, 225 18, 285 22 C328 25, 345 55, 338 92 C331 128, 290 138, 240 126 C190 114, 145 138, 85 136 C35 134, 22 105, 22 65 Z" fill="#0D0F14" stroke="url(#rimGrad)" stroke-width="4" />
+                        <rect x="172" y="34" width="32" height="5.5" rx="2.75" fill="url(#metalFill)" />
+                        <circle cx="286" cy="44" r="6" fill="url(#metalFill)" />
+                        <circle cx="304" cy="36" r="6.8" fill="url(#metalFill)" />
+                        <circle cx="321" cy="46" r="6" fill="url(#metalFill)" />
+                        <text x="42" y="109" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="800" font-style="italic" font-size="78" letter-spacing="-3" fill="url(#metalFill)">ShArt</text>
+                    </svg>
+                </div>
+                <div class="emblem-metrics">
+                    <div>
+                        <strong>3</strong>
+                        <span>Divisiones Core</span>
+                    </div>
+                    <div>
+                        <strong>99.9%</strong>
+                        <span>Precisión Técnica</span>
+                    </div>
+                    <div>
+                        <strong>GLOBAL</strong>
+                        <span>Escalabilidad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISIÓN / MANIFIESTO -->
+    <section id="vision" class="section border-top">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-kicker">01 // IDENTIDAD CORPORATIVA</span>
+                <h2>Ingeniería sin concesiones. Visión multimillonaria.</h2>
+            </div>
+            <div class="manifesto-grid">
+                <div class="manifesto-lead reveal">
+                    <p>
+                        Cada línea de código, cada motor gráfico y cada arquitectura web que sale de <strong>ShĀrt Studios</strong> nace de una obsesión absoluta por la excelencia técnica, el diseño de vanguardia y la rentabilidad sostenible.
+                    </p>
+                </div>
+                <div class="manifesto-pillars reveal">
+                    <div class="pillar-item">
+                        <h4>Potencia Creativa & Técnica</h4>
+                        <p>Fusionamos narrativa interactiva de videojuegos con infraestructura de software empresarial.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4>Ejecución de Alto Nivel</h4>
+                        <p>Transformamos ideas ambiciosas en productos digitales listos para competir a escala internacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISIONES -->
+    <section id="divisiones" class="section border-top">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-kicker">02 // ARQUITECTURA DE NEGOCIO</span>
+                <h2>Tres pilares tecnológicos bajo un mismo estándar</h2>
+            </div>
+
+            <div class="divisions-grid">
+                <article class="glass-card reveal">
+                    <div class="card-index">DIVISIÓN I</div>
+                    <h3>ShĀrt Interactive & Gaming</h3>
+                    <p>Desarrollo de videojuegos con mecánicas profundas, atmósferas envolventes, sistemas de progresión y motores optimizados para múltiples plataformas.</p>
+                    <ul class="spec-list">
+                        <li>Diseño de Sistemas & Gameplay</li>
+                        <li>Arquitectura Unity & C#</li>
+                        <li>Propiedades Intelectuales Originales</li>
+                    </ul>
+                </article>
+
+                <article class="glass-card reveal">
+                    <div class="card-index">DIVISIÓN II</div>
+                    <h3>ShĀrt Software & Plataformas</h3>
+                    <p>Aplicaciones inteligentes, ecosistemas de talento y sistemas automatizados diseñados para resolver desafíos complejos con velocidad y elegancia.</p>
+                    <ul class="spec-list">
+                        <li>Plataformas SaaS & Matching</li>
+                        <li>Sistemas FinTech & Analítica</li>
+                        <li>Arquitecturas Cloud Escalables</li>
+                    </ul>
+                </article>
+
+                <article class="glass-card featured-card reveal">
+                    <div class="card-index">DIVISIÓN III // DISPONIBLE HOY</div>
+                    <h3>ShĀrt Web & Soluciones Enterprise</h3>
+                    <p>Ingeniería web de alto prestigio para marcas, clínicas y empresas que exigen presencia digital futurista, velocidad extrema y conversión real.</p>
+                    <ul class="spec-list">
+                        <li>Sitios Corporativos & Portafolios Elite</li>
+                        <li>Plataformas de Reservas & Gestión</li>
+                        <li>Diseño UI/UX de Lujo Tecnológico</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECOSISTEMA / PORTAFOLIO -->
+    <section id="ecosistema" class="section border-top">
+        <div class="container">
+            <div class="ecosystem-top reveal">
+                <div>
+                    <span class="section-kicker">03 // ECOSISTEMA & PORTAFOLIO</span>
+                    <h2>Proyectos que definen nuestra capacidad</h2>
+                </div>
+                <div class="filter-bar" role="tablist">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="gaming">Videojuegos</button>
+                    <button class="filter-btn" data-filter="software">Software & Apps</button>
+                    <button class="filter-btn" data-filter="web">Web & Clientes</button>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Proyecto 1 -->
+                <article class="project-card reveal" data-category="gaming" data-title="Locked In" data-cat-label="VIDEOJUEGOS // PROPIEDAD INTELECTUAL" data-desc="Experiencia interactiva de alta tensión centrada en precisión, toma de decisiones bajo presión y atmósfera inmersiva. Desarrollado bajo estándares propios de ShĀrt Interactive." data-tech="Unity • C# • Game Design • Sistemas de Física">
+                    <div class="project-meta">
+                        <span class="tag-pill">VIDEOJUEGO</span>
+                        <span class="project-year">SHĀRT IP</span>
+                    </div>
+                    <h3>Locked In</h3>
+                    <p>Título interactivo de alta intensidad enfocado en enfoque absoluto, mecánicas tácticas y diseño atmosférico.</p>
+                    <div class="project-footer">
+                        <span>Unity / C#</span>
+                        <button class="btn-inspect">Inspeccionar &rarr;</button>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="project-card reveal" data-category="gaming" data-title="Last Line" data-cat-label="VIDEOJUEGOS // ESTRATEGIA & SUPERVIVENCIA" data-desc="Videojuego de defensa estratégica y resistencia donde cada decisión redefine el límite entre el colapso y la victoria. Ingeniería de sistemas progresivos y balance dinámico." data-tech="C# • Inteligencia Artificial • Arquitectura Modular">
+                    <div class="project-meta">
+                        <span class="tag-pill">VIDEOJUEGO</span>
+                        <span class="project-year">SHĀRT IP</span>
+                    </div>
+                    <h3>Last Line</h3>
+                    <p>Estrategia y resistencia táctica en la última frontera de defensa con sistemas dinámicos de progresión.</p>
+                    <div class="project-footer">
+                        <span>Game Systems</span>
+                        <button class="btn-inspect">Inspeccionar &rarr;</button>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="project-card reveal" data-category="software" data-title="SkillBridge" data-cat-label="SOFTWARE // PLATAFORMA DE TALENTO" data-desc="Plataforma tecnológica diseñada para conectar talento especializado con oportunidades reales mediante perfiles verificados, algoritmos de coincidencia y gestión fluida." data-tech="Full-Stack Web • Base de Datos • UI/UX Corporativo">
+                    <div class="project-meta">
+                        <span class="tag-pill">SOFTWARE</span>
+                        <span class="project-year">PLATAFORMA</span>
+                    </div>
+                    <h3>SkillBridge</h3>
+                    <p>Ecosistema digital de conexión profesional que enlaza habilidades técnicas con proyectos y empresas de alto nivel.</p>
+                    <div class="project-footer">
+                        <span>Plataforma Web</span>
+                        <button class="btn-inspect">Inspeccionar &rarr;</button>
+                    </div>
+                </article>
+
+                <!-- Proyecto 4 -->
+                <article class="project-card reveal" data-category="software web" data-title="Looking Money" data-cat-label="FINTECH & WEB // GESTIÓN FINANCIERA" data-desc="Solución digital orientada a la claridad financiera, seguimiento de capital y optimización de oportunidades económicas con una interfaz limpia y de alto rendimiento." data-tech="JavaScript • Analítica Visual • Arquitectura Web">
+                    <div class="project-meta">
+                        <span class="tag-pill">SOFTWARE / WEB</span>
+                        <span class="project-year">FINTECH</span>
+                    </div>
+                    <h3>Looking Money</h3>
+                    <p>Herramienta inteligente de visualización, control y proyección financiera construida para decisiones rápidas.</p>
+                    <div class="project-footer">
+                        <span>FinTech App</span>
+                        <button class="btn-inspect">Inspeccionar &rarr;</button>
+                    </div>
+                </article>
+
+                <!-- Proyecto 5 -->
+                <article class="project-card reveal" data-category="web" data-title="Portal Clínico de Fisioterapia" data-cat-label="WEB ENTERPRISE // SECTOR SALUD" data-desc="Plataforma web profesional desarrollada para servicios de fisioterapia y rehabilitación, combinando confianza clínica, presentación de tratamientos, agenda y estética moderna." data-tech="HTML5 • CSS3 • JavaScript • Diseño Responsivo">
+                    <div class="project-meta">
+                        <span class="tag-pill">WEB CLIENTE</span>
+                        <span class="project-year">SALUD & CLÍNICA</span>
+                    </div>
+                    <h3>Plataforma de Fisioterapia</h3>
+                    <p>Sitio web corporativo y clínico diseñado para proyectar autoridad médica, confianza y captación de pacientes.</p>
+                    <div class="project-footer">
+                        <span>Web Corporativa</span>
+                        <button class="btn-inspect">Inspeccionar &rarr;</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBRESÍAS ENTERPRISE -->
+    <section id="membresias" class="section border-top">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <span class="section-kicker">04 // ALIANZAS & MEMBRESÍAS ENTERPRISE</span>
+                <h2>Membresías Corporativas de Alto Impacto</h2>
+                <p class="section-desc">
+                    Acceso exclusivo a nuestra infraestructura de ingeniería, licenciamiento tecnológico y desarrollo dedicado a escala global.
+                </p>
+
+                <div class="billing-toggle">
+                    <span id="labelAnnual" class="active">Contrato Anual</span>
+                    <button id="billingSwitch" class="switch-btn" aria-label="Cambiar modalidad de contrato">
+                        <span class="switch-knob"></span>
+                    </button>
+                    <span id="labelMulti">Alianza Multi-Año <small>(-15%)</small></span>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Nivel 1 -->
+                <div class="pricing-card reveal">
+                    <div class="tier-header">
+                        <span class="tier-code">TIER 01 // EXECUTIVE</span>
+                        <h3>Partner Web & Digital</h3>
+                        <p>Para empresas y marcas que buscan presencia web de lujo y arquitectura digital a medida.</p>
+                    </div>
+                    <div class="tier-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-annual="150,000" data-multi="127,500">150,000</span>
+                        <span class="period">USD / año</span>
+                    </div>
+                    <ul class="tier-features">
+                        <li>Arquitectura Web Corporativa de Élite</li>
+                        <li>Diseño UI/UX Futurista Personalizado</li>
+                        <li>Optimización de Rendimiento y Seguridad</li>
+                        <li>Soporte Ejecutivo Prioritario 24/7</li>
+                    </ul>
+                    <button class="btn-tier select-tier" data-plan="Tier 01: Partner Web & Digital ($150,000 USD/año)">Solicitar Membresía</button>
+                </div>
+
+                <!-- Nivel 2 -->
+                <div class="pricing-card pricing-featured reveal">
+                    <div class="popular-badge">ESTÁNDAR GLOBAL</div>
+                    <div class="tier-header">
+                        <span class="tier-code">TIER 02 // VENTURE</span>
+                        <h3>Enterprise Software & IP</h3>
+                        <p>Desarrollo integral de plataformas de software, aplicaciones y ecosistemas escalables.</p>
+                    </div>
+                    <div class="tier-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-annual="500,000" data-multi="425,000">500,000</span>
+                        <span class="period">USD / año</span>
+                    </div>
+                    <ul class="tier-features">
+                        <li>Célula Dedicada de Ingeniería ShĀrt</li>
+                        <li>Desarrollo Full-Stack de Software & Apps</li>
+                        <li>Integración de Sistemas y Analítica Avanzada</li>
+                        <li>Acceso Anticipado a Tecnología ShĀrt</li>
+                    </ul>
+                    <button class="btn-primary btn-full select-tier" data-plan="Tier 02: Enterprise Software & IP ($500,000 USD/año)">Adquirir Alianza</button>
+                </div>
+
+                <!-- Nivel 3 -->
+                <div class="pricing-card reveal">
+                    <div class="tier-header">
+                        <span class="tier-code">TIER 03 // SOVEREIGN</span>
+                        <h3>Founders Syndicate</h3>
+                        <p>Co-desarrollo de videojuegos AAA/Indie, licenciamiento maestro e innovación sin límites.</p>
+                    </div>
+                    <div class="tier-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-annual="1,200,000" data-multi="1,020,000">1,200,000</span>
+                        <span class="period">USD / año</span>
+                    </div>
+                    <ul class="tier-features">
+                        <li>Co-producción de Videojuegos & Motores</li>
+                        <li>Licenciamiento Global de Propiedad Intelectual</li>
+                        <li>Dirección Tecnológica Ejecutiva Directa</li>
+                        <li>Infraestructura Privada y Confidencialidad Total</li>
+                    </ul>
+                    <button class="btn-tier select-tier" data-plan="Tier 03: Founders Syndicate ($1,200,000 USD/año)">Aplicar al Sindicato</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section border-top">
+        <div class="container contact-grid">
+            <div class="contact-info reveal">
+                <span class="section-kicker">05 // CONEXIÓN DIRECTA</span>
+                <h2>Inicia tu proyecto o alianza con ShĀrt Studios</h2>
+                <p>
+                    Ya sea que busques desarrollar una plataforma web de alto impacto para tu negocio o establecer una alianza tecnológica corporativa, nuestro equipo está listo para ejecutar.
+                </p>
+                <div class="contact-details">
+                    <div>
+                        <strong>Sede Central</strong>
+                        <span>Ciudad de Guatemala • Operaciones Globales</span>
+                    </div>
+                    <div>
+                        <strong>Canal Ejecutivo</strong>
+                        <span>executive@shartstudios.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm">
+                <div class="form-group">
+                    <label for="clientName">Nombre o Empresa</label>
+                    <input type="text" id="clientName" required placeholder="Ej. Corporación Global / Dra. Yami" />
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Correo Corporativo</label>
+                    <input type="email" id="clientEmail" required placeholder="nombre@empresa.com" />
+                </div>
+                <div class="form-group">
+                    <label for="projectType">División o Membresía de Interés</label>
+                    <select id="projectType">
+                        <option value="Desarrollo Web Corporativo / Profesional">Desarrollo Web Corporativo / Profesional</option>
+                        <option value="Software & Plataforma a Medida">Software & Plataforma a Medida</option>
+                        <option value="Videojuegos & Experiencias Interactivas">Videojuegos & Experiencias Interactivas</option>
+                        <option value="Tier 01: Partner Web & Digital ($150,000 USD/año)">Tier 01: Partner Web & Digital ($150,000 USD/año)</option>
+                        <option value="Tier 02: Enterprise Software & IP ($500,000 USD/año)">Tier 02: Enterprise Software & IP ($500,000 USD/año)</option>
+                        <option value="Tier 03: Founders Syndicate ($1,200,000 USD/año)">Tier 03: Founders Syndicate ($1,200,000 USD/año)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="projectBrief">Resumen del Proyecto</label>
+                    <textarea id="projectBrief" rows="4" required placeholder="Describe los objetivos, alcance y visión de tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Enviar Solicitud Ejecutiva</button>
+                <p class="form-feedback" id="formFeedback"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <strong>ShĀrt Studios</strong>
+                <span>Tecnología • Videojuegos • Ingeniería Web</span>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 ShĀrt Studios. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE INSPECCIÓN -->
+    <div class="modal-backdrop" id="projectModal" aria-hidden="true">
+        <div class="modal-box">
+            <button class="modal-close" id="closeModal" aria-label="Cerrar">&times;</button>
+            <span class="section-kicker" id="modalCategory">CATEGORÍA</span>
+            <h3 id="modalTitle">Título del Proyecto</h3>
+            <p id="modalDescription">Descripción detallada del proyecto.</p>
+            <div class="modal-tech" id="modalTech">Stack Tecnológico</div>
+            <div class="modal-actions">
+                <a href="#contacto" class="btn-primary" id="modalCta">Solicitar Arquitectura Similar</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
