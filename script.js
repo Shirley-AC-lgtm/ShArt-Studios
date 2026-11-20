@@ -69,27 +69,27 @@
                 {
                     chapter: 'CAPÍTULO I • EL DESPERTAR DEL BOSQUE',
                     title: 'El Equilibrio Roto',
-                    text: 'Durante siglos, los cuatro pueblos mantuvieron la paz alrededor del bosque sagrado. Pero cuando los elementales quedaron dispersos entre los territorios, cada pueblo marchó para reclamar su poder.',
-                    image: 'Portada.jpg'
+                    text: 'Hace mucho tiempo, en el corazón de un bosque ancestral, vivía Yasméntis, una antigua guardiana que protegía el equilibrio de la naturaleza y los cuatro elementos: agua, fuego, tierra y viento. Un día, cuatro jóvenes llegaron al bosque.Sin comprender la importancia de aquel lugar, comenzaron a explorar sus alrededores y, por descuido, cometieron varios actos que alteraron su equilibrio: uno destruyó una pequeña criatura del bosque, otro rompió una antigua piedra sagrada, otro contaminó la tierra y el último tomó un tesoro elemental que no le pertenecía.',
+                    image: 'Capitulo1.png'
                 },
                 {
                     chapter: 'CAPÍTULO II • LA FURIA DE JASMENTIS',
                     title: 'Dominio de los Cuatro Elementos',
-                    text: 'Jasmentis desata la fuerza viva del bosque para someter a quienes intentan desequilibrar la naturaleza: raíces de tierra, mareas desbordadas, llamas y vientos implacables.',
-                    image: 'fondo.jpg'
+                    text: 'Aquellas acciones despertaron a Yasméntis, quien apareció ante ellos llena de tristeza e ira. Cegada por su dolor, decidió castigarlos utilizando el poder de los cuatro elementos. Sin embargo, su poder se descontroló.En un intento por detener la destrucción que ella misma había provocado, Yasméntis sacrificó su propia esencia.Su cuerpo se convirtió en piedra y su espíritu se fragmentó, dejando una parte de su poder dentro de cada uno de los cuatro jóvenes. Los jóvenes sobrevivieron, pero desde entonces cada uno lleva en su interior un fragmento elemental. Con el paso del tiempo nació una leyenda: aquel que consiga llevar a los cuatro elementales hasta el altar de Yasméntis recibirá una recompensa inconmensurable y un poder capaz de cambiar el destino de su pueblo.',
+                    image: 'Capitulo2.png'
                 },
                 {
                     chapter: 'CAPÍTULO III • RESCATE EN EL BOSQUE',
                     title: 'La Guerra por los Elementales',
-                    text: 'Cada incursión cuenta: infiltrarse en terreno rival, rescatar un elemental y escoltarlo de regreso define qué pueblo alzará la victoria final.',
-                    image: 'Portada.jpg'
+                    text: 'Al escuchar esta promesa, los diferentes pueblos comenzaron a perseguir a los cuatro jóvenes. Cada uno quería ser el primero en encontrarlos y llevarlos ante la guardiana. La ambición por conseguir aquel poder provocó enfrentamientos entre los pueblos.Lo que comenzó como una búsqueda de una recompensa terminó convirtiéndose en una guerra. Pero existe un secreto que pocos conocen: llevar a los elementales ante Yasméntis no significa obtener su poder. Para despertar a la guardiana, los cuatro jóvenes deberán reunirse y liberar voluntariamente los fragmentos que llevan dentro. Cuando eso suceda, Yasméntis podrá recuperar su forma y devolver el equilibrio al bosque.Los cuatro jóvenes, por su parte, perderán los poderes que los mantenían unidos a ella y sus almas regresarán a su destino original. Así comienza la historia de cuatro jóvenes perseguidos por pueblos que desean su poder, sin saber que el verdadero destino de los elementales podría ser mucho más importante que cualquier recompensa.',
+                    image: 'Capitulo3.png'
                 }
             ],
             mapTitle: 'Escenario: El Bosque Ancestral de los 4 Pueblos',
             mapDesc: 'Mapa dividido en cuatro dominios elementales conectados por senderos boscosos, claros de rescate y santuarios centrales.',
             mapImage: 'Portada.jpg',
             characters: [
-                { name: 'Jasmentis', role: 'Guardiana Suprema del Bosque', img: 'jasmentis_2.jpeg' },
+                { name: 'Jasmentis', role: 'Guardiana Suprema del Bosque', img: 'jasmentis.jpeg' },
                 { name: 'Elemental de Tierra', role: 'Pueblo de la Roca & Raíces', img: 'Elementales.jpeg' },
                 { name: 'Elemental de Agua', role: 'Pueblo de las Mareas', img: 'Elementales - copia (2).jpeg' },
                 { name: 'Elemental de Fuego', role: 'Pueblo Ígneo', img: 'Elementales - copia (3).jpeg' },

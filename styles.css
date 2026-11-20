@@ -763,8 +763,21 @@ h2 {
     .tier-grid.two-cols,
     .contact-wrap,
     .manga-panel {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: minmax(280px, 1.15fr) 1fr;
+        gap: 24px;
+        align-items: center;
     }
+
+        .manga-panel img {
+            width: 100%;
+            height: auto;
+            max-height: 68vh;
+            object-fit: contain;
+            border: 2px solid #ffffff;
+            background: #050706;
+            display: block;
+        }
 
     .modal-chars-grid {
         grid-template-columns: repeat(2, 1fr);
