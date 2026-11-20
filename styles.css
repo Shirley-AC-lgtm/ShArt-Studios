@@ -1,36 +1,15 @@
 ﻿:root {
     --bg-deep: #060908;
-    --bg-panel: rgba(12, 18, 15, 0.84);
+    --bg-panel: rgba(12, 18, 15, 0.88);
     --text-main: #f4f7f5;
-    --text-dim: #a6b5ae;
+    --text-dim: #a8b7b0;
     --accent: #34d399;
-    --accent-glow: rgba(52, 211, 153, 0.28);
-    --gold: #eab308;
-    --border: rgba(255, 255, 255, 0.12);
+    --accent-glow: rgba(52, 211, 153, 0.25);
+    --gold: #fde047;
+    --border: rgba(255, 255, 255, 0.13);
     --font-epic: 'Cinzel', serif;
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
-}
-
-/* TEMAS ELEMENTALES DINÁMICOS */
-body.theme-forest {
-    --accent: #34d399;
-    --accent-glow: rgba(52, 211, 153, 0.28);
-}
-
-body.theme-water {
-    --accent: #38bdf8;
-    --accent-glow: rgba(56, 189, 248, 0.3);
-}
-
-body.theme-fire {
-    --accent: #fb7185;
-    --accent-glow: rgba(251, 113, 133, 0.32);
-}
-
-body.theme-guardian {
-    --accent: #2dd4bf;
-    --accent-glow: rgba(45, 212, 191, 0.28);
 }
 
 * {
@@ -72,7 +51,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(6, 9, 8, 0.85);
+    background: rgba(6, 9, 8, 0.88);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
 }
@@ -81,7 +60,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 76px;
+    height: 74px;
 }
 
 .brand-link {
@@ -92,17 +71,11 @@ body {
     color: var(--text-main);
 }
 
-.brand-logo {
-    height: 44px;
-    width: auto;
-    object-fit: contain;
-}
-
 .brand-fallback {
     font-family: var(--font-epic);
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     font-weight: 800;
-    color: var(--text-main);
+    letter-spacing: 0.04em;
 }
 
 .brand-sub {
@@ -159,10 +132,10 @@ body {
         background: #ffffff;
     }
 
-/* HERO */
+/* HERO CON FONDO CLARO Y NÍTIDO */
 .hero-stage {
     position: relative;
-    min-height: 88vh;
+    min-height: 92vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -179,22 +152,26 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(1.2) brightness(0.45);
-    transform: scale(1.03);
+    object-position: center 20%;
+    filter: saturate(1.18) contrast(1.05) brightness(0.95);
 }
 
+/* Velo sutil para que el arte se vea claro y el texto sea 100% legible */
 .hero-vignette {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(6, 9, 8, 0.94) 0%, rgba(6, 9, 8, 0.68) 55%, rgba(6, 9, 8, 0.88) 100%), linear-gradient(180deg, rgba(6, 9, 8, 0.35) 0%, rgba(6, 9, 8, 0.98) 100%);
+    background: linear-gradient(90deg, rgba(6, 9, 8, 0.72) 0%, rgba(6, 9, 8, 0.22) 52%, rgba(6, 9, 8, 0.05) 100%), linear-gradient(180deg, rgba(6, 9, 8, 0.10) 0%, rgba(6, 9, 8, 0.76) 100%);
 }
 
 .hero-overlay {
-    display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: 48px;
+    display: flex;
     align-items: center;
-    padding: 72px 0;
+    padding: 90px 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.92), 0 6px 30px rgba(0, 0, 0, 0.8);
 }
 
 .relic-tag {
@@ -205,8 +182,8 @@ body {
     color: var(--accent);
     border: 1px solid var(--accent);
     padding: 6px 14px;
-    margin-bottom: 20px;
-    background: rgba(0, 0, 0, 0.45);
+    margin-bottom: 18px;
+    background: rgba(6, 9, 8, 0.65);
 }
 
 h1 {
@@ -214,20 +191,20 @@ h1 {
     font-size: clamp(2.4rem, 5vw, 4.2rem);
     line-height: 1.06;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .gold-grad {
-    background: linear-gradient(90deg, #ffffff 0%, var(--accent) 55%, #fde047 100%);
+    background: linear-gradient(90deg, #ffffff 0%, var(--accent) 55%, var(--gold) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-lead {
-    color: var(--text-dim);
+    color: #e4ece8;
     font-size: 1.06rem;
-    max-width: 56ch;
-    margin-bottom: 32px;
+    max-width: 54ch;
+    margin-bottom: 30px;
 }
 
 .hero-btns {
@@ -263,55 +240,21 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 13px 24px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255, 255, 255, 0.45);
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(6, 9, 8, 0.55);
+    backdrop-filter: blur(6px);
 }
 
     .btn-ghost:hover {
         border-color: #ffffff;
     }
 
-.poster-frame {
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 36px var(--accent-glow);
-    overflow: hidden;
-    background: #0b110e;
-}
-
-    .poster-frame img {
-        display: block;
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-    }
-
-.poster-caption {
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: 18px;
-    background: linear-gradient(transparent, rgba(5, 8, 7, 0.96));
-    display: flex;
-    flex-direction: column;
-}
-
-    .poster-caption span {
-        font-size: 0.7rem;
-        letter-spacing: 0.2em;
-        color: var(--accent);
-    }
-
-    .poster-caption strong {
-        font-family: var(--font-epic);
-        font-size: 1.35rem;
-    }
-
 /* SECCIONES */
 .section {
-    padding: 92px 0;
+    padding: 90px 0;
 }
 
 .border-line {
@@ -320,7 +263,7 @@ h1 {
 
 .section-head {
     max-width: 720px;
-    margin-bottom: 44px;
+    margin-bottom: 42px;
 }
 
 .kicker {
@@ -334,7 +277,7 @@ h1 {
 
 h2 {
     font-family: var(--font-epic);
-    font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
     line-height: 1.12;
     margin-bottom: 12px;
 }
@@ -343,195 +286,7 @@ h2 {
     color: var(--text-dim);
 }
 
-/* ARENA ELEMENTALES */
-.arena-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 28px;
-    align-items: stretch;
-}
-
-.arena-visual {
-    position: relative;
-    min-height: 360px;
-    border: 1px solid var(--border);
-    background: linear-gradient(145deg, #0d1914, #070b09);
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-}
-
-    .arena-visual img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.45;
-    }
-
-.arena-hud {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(5, 8, 7, 0.96));
-}
-
-.hud-pill {
-    border: 1px solid var(--border);
-    background: rgba(6, 9, 8, 0.85);
-    padding: 12px;
-}
-
-    .hud-pill span {
-        display: block;
-        font-size: 0.68rem;
-        letter-spacing: 0.16em;
-        color: var(--text-dim);
-    }
-
-    .hud-pill strong {
-        font-family: var(--font-display);
-        font-size: 0.86rem;
-        color: var(--accent);
-    }
-
-.arena-rules {
-    display: grid;
-    gap: 16px;
-}
-
-.rule-card {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    padding: 22px 24px;
-    transition: border-color 0.25s ease;
-}
-
-    .rule-card:hover {
-        border-color: var(--accent);
-    }
-
-.rule-num {
-    font-family: var(--font-epic);
-    color: var(--accent);
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 6px;
-}
-
-.rule-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    margin-bottom: 6px;
-}
-
-.rule-card p {
-    color: var(--text-dim);
-    font-size: 0.92rem;
-}
-
-/* ROSTER / PERSONAJES */
-.character-stage {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 36px;
-    align-items: center;
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    box-shadow: 0 0 40px var(--accent-glow);
-    padding: 28px;
-    margin-bottom: 24px;
-}
-
-.char-preview {
-    background: #050706;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    aspect-ratio: 3 / 4;
-}
-
-    .char-preview img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-.char-faction {
-    font-family: var(--font-display);
-    font-size: 0.75rem;
-    letter-spacing: 0.22em;
-    color: var(--accent);
-}
-
-.char-info h3 {
-    font-family: var(--font-epic);
-    font-size: 2.2rem;
-    margin: 8px 0 12px;
-}
-
-.char-info p {
-    color: var(--text-dim);
-    max-width: 54ch;
-    margin-bottom: 20px;
-}
-
-.char-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-    .char-tags span {
-        font-size: 0.72rem;
-        letter-spacing: 0.16em;
-        padding: 5px 12px;
-        border: 1px solid var(--border);
-        color: #ffffff;
-    }
-
-.character-strip {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-}
-
-.char-thumb {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    color: var(--text-main);
-    cursor: pointer;
-    padding: 8px;
-    text-align: left;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-    .char-thumb img {
-        width: 100%;
-        height: 120px;
-        object-fit: cover;
-        display: block;
-        margin-bottom: 8px;
-    }
-
-    .char-thumb span {
-        font-family: var(--font-display);
-        font-size: 0.85rem;
-        font-weight: 600;
-    }
-
-    .char-thumb.active,
-    .char-thumb:hover {
-        border-color: var(--accent);
-        transform: translateY(-3px);
-    }
-
-/* PÓSTERES DE PROYECTOS */
+/* TARJETAS DE JUEGOS Y APPS */
 .posters-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -542,22 +297,31 @@ h2 {
     background: var(--bg-panel);
     border: 1px solid var(--border);
     overflow: hidden;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
     .poster-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
         border-color: var(--accent);
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.65), 0 0 24px var(--accent-glow);
     }
 
-    .poster-card.independent-style {
-        border-style: dashed;
-    }
+.featured-card {
+    border-color: rgba(52, 211, 153, 0.45);
+}
+
+.poster-card.independent-style {
+    border-style: dashed;
+}
 
 .poster-media {
     position: relative;
-    height: 230px;
+    height: 240px;
     overflow: hidden;
+    background: #0b120f;
 }
 
     .poster-media img {
@@ -565,7 +329,48 @@ h2 {
         height: 100%;
         object-fit: cover;
         display: block;
+        transition: transform 0.4s ease;
     }
+
+.poster-card:hover .poster-media img {
+    transform: scale(1.04);
+}
+
+/* Fondos estilizados para proyectos sin imagen aún */
+.art-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-epic);
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.88);
+    text-align: center;
+    padding: 20px;
+}
+
+.lastline-art {
+    background: radial-gradient(circle at center, #292214 0%, #09090b 100%);
+    color: #fde047;
+}
+
+.lockedin-art {
+    background: radial-gradient(circle at center, #0e2a23 0%, #070c0a 100%);
+    color: #34d399;
+}
+
+.skillbridge-art {
+    background: radial-gradient(circle at center, #0f2537 0%, #070b10 100%);
+    color: #38bdf8;
+}
+
+.lookingmoney-art {
+    background: radial-gradient(circle at center, #1f2916 0%, #070a06 100%);
+    color: #a3e635;
+}
 
 .badge-live,
 .badge-alt {
@@ -576,42 +381,93 @@ h2 {
     font-weight: 700;
     letter-spacing: 0.14em;
     padding: 4px 10px;
-    background: rgba(6, 9, 8, 0.88);
+    background: rgba(6, 9, 8, 0.9);
     color: var(--accent);
     border: 1px solid var(--accent);
 }
 
 .badge-alt {
-    color: #fde047;
-    border-color: #fde047;
+    color: var(--gold);
+    border-color: var(--gold);
 }
 
 .poster-body {
-    padding: 20px;
+    padding: 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
     .poster-body h3 {
         font-family: var(--font-epic);
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         margin-bottom: 8px;
     }
 
     .poster-body p {
         color: var(--text-dim);
-        font-size: 0.9rem;
+        font-size: 0.92rem;
+        margin-bottom: 16px;
     }
 
-/* MEMBRESÍAS */
-.tier-grid {
+.card-action {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* SECCIÓN CLIENTES WEB */
+.clients-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+}
+
+.client-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    padding: 30px;
+    cursor: pointer;
+    transition: border-color 0.25s ease;
+}
+
+    .client-card:hover {
+        border-color: var(--accent);
+    }
+
+.client-tag {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.client-card h3 {
+    font-family: var(--font-epic);
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+}
+
+.client-card p {
+    color: var(--text-dim);
+    font-size: 0.94rem;
+    margin-bottom: 18px;
+}
+
+/* MEMBRESÍAS */
+.tier-grid.two-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
 }
 
 .tier-box {
     background: var(--bg-panel);
     border: 1px solid var(--border);
-    padding: 30px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -630,29 +486,43 @@ h2 {
 
 .tier-box h3 {
     font-family: var(--font-epic);
-    font-size: 1.55rem;
-    margin: 8px 0 14px;
+    font-size: 1.6rem;
+    margin: 8px 0 12px;
 }
 
 .tier-amount {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 14px;
 }
 
     .tier-amount span {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         color: var(--text-dim);
         font-weight: 400;
     }
 
 .tier-box p {
     color: var(--text-dim);
-    font-size: 0.92rem;
-    margin-bottom: 24px;
+    font-size: 0.94rem;
+    margin-bottom: 16px;
 }
+
+.tier-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    margin-bottom: 26px;
+    font-size: 0.9rem;
+    color: #d8e3de;
+}
+
+    .tier-list li::before {
+        content: "◆ ";
+        color: var(--accent);
+    }
 
 .full-w {
     width: 100%;
@@ -684,7 +554,7 @@ h2 {
     .relic-form textarea {
         width: 100%;
         padding: 12px 14px;
-        background: rgba(5, 8, 7, 0.9);
+        background: rgba(5, 8, 7, 0.92);
         border: 1px solid var(--border);
         color: #ffffff;
         font-family: var(--font-body);
@@ -713,6 +583,168 @@ h2 {
     font-size: 0.86rem;
 }
 
+/* MODAL DETALLADO DE PROYECTO + VISOR MANGA */
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+    .project-modal.open {
+        display: flex;
+    }
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 5, 4, 0.88);
+    backdrop-filter: blur(10px);
+}
+
+.modal-dialog {
+    position: relative;
+    z-index: 2;
+    width: min(1040px, 96%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #0a100d;
+    border: 1px solid var(--accent);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.95);
+    padding: 34px;
+}
+
+.modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    background: #060908;
+    border: 1px solid var(--border);
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+    .modal-close:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+.modal-header {
+    margin-bottom: 24px;
+}
+
+    .modal-header h2 {
+        margin-top: 6px;
+    }
+
+.modal-section {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+    .modal-section h3 {
+        font-family: var(--font-epic);
+        font-size: 1.3rem;
+        color: var(--accent);
+        margin-bottom: 14px;
+    }
+
+/* VISOR MANGA / CÓMIC INTERACTIVO */
+.manga-reader {
+    background: #050706;
+    border: 1px solid var(--border);
+    padding: 20px;
+}
+
+.manga-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+    .manga-panel img {
+        width: 100%;
+        max-height: 320px;
+        object-fit: cover;
+        border: 2px solid #ffffff;
+    }
+
+.manga-caption-box {
+    background: #101714;
+    border-left: 3px solid var(--accent);
+    padding: 18px;
+}
+
+.manga-chapter {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+}
+
+.manga-caption-box h4 {
+    font-family: var(--font-epic);
+    font-size: 1.2rem;
+    margin: 6px 0 10px;
+}
+
+.manga-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+/* GALERÍA DE PERSONAJES EN MODAL */
+.modal-chars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.modal-char-card {
+    background: #060908;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+    .modal-char-card img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .modal-char-card .info {
+        padding: 12px;
+    }
+
+    .modal-char-card h4 {
+        font-family: var(--font-epic);
+        font-size: 1rem;
+    }
+
+    .modal-char-card span {
+        font-size: 0.76rem;
+        color: var(--accent);
+    }
+
+.modal-map-img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    margin-top: 10px;
+}
+
 /* REVEAL */
 .reveal {
     opacity: 0;
@@ -726,23 +758,22 @@ h2 {
     }
 
 @media (max-width: 960px) {
-    .hero-overlay,
-    .arena-grid,
-    .character-stage,
     .posters-grid,
-    .tier-grid,
-    .contact-wrap {
+    .clients-grid,
+    .tier-grid.two-cols,
+    .contact-wrap,
+    .manga-panel {
         grid-template-columns: 1fr;
     }
 
-    .character-strip {
+    .modal-chars-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .nav-menu {
         display: none;
         position: absolute;
-        top: 76px;
+        top: 74px;
         left: 0;
         right: 0;
         flex-direction: column;

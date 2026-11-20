@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShĀrt Studios | Estilo Elemental & Ingeniería de Alto Impacto</title>
+    <title>ShĀrt Studios | Videojuegos, Software & Desarrollo Web</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="theme-forest">
+<body>
     <canvas id="elemental-canvas"></canvas>
 
     <!-- NAVEGACIÓN -->
     <header class="topbar">
         <div class="container topbar-inner">
             <a href="#hero" class="brand-link">
-                <img src="Logo.png" alt="Logo ShArt Studios" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
-                <span class="brand-fallback" style="display:none;">ShĀrt</span>
+                <span class="brand-fallback">ShĀrt</span>
                 <span class="brand-sub">STUDIOS</span>
             </a>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="#elementales">Elementales</a>
-                <a href="#roster">Pueblos & Héroes</a>
-                <a href="#universo">Proyectos</a>
+                <a href="#productos">Juegos & Apps</a>
+                <a href="#clientes">Webs a Medida</a>
                 <a href="#membresias">Membresías</a>
-                <a href="#alianzas" class="nav-cta">Alianzas</a>
+                <a href="#alianzas" class="nav-cta">Contacto</a>
             </nav>
 
             <button class="burger" id="burgerBtn" aria-label="Menú">
@@ -35,274 +33,207 @@
         </div>
     </header>
 
-    <!-- ESCENA PRINCIPAL ESTILO RIOT / ELEMENTALES -->
+    <!-- PORTADA PRINCIPAL CON FONDO COMPLETO Y VISIBLE -->
     <section id="hero" class="hero-stage">
         <div class="hero-backdrop">
-            <img src="Portada.jpg" alt="Portada Elementales - Pueblos en Guerra" class="hero-bg-img" onerror="this.style.opacity='0.18';" />
+            <img src="fondo.jpeg" alt="Jasmentis dominando los cuatro elementales en el bosque" class="hero-bg-img" onerror="this.src='Portada.jpg';" />
             <div class="hero-vignette"></div>
         </div>
 
         <div class="container hero-overlay">
-            <div class="hero-left reveal">
-                <span class="relic-tag">ESTILO OFICIAL SHĀRT • ELEMENTALES</span>
-                <h1>EL BOSQUE ARDE.<br><span class="gold-grad">LOS PUEBLOS CHOCAN.</span></h1>
+            <div class="hero-content reveal">
+                <span class="relic-tag">SHĀRT STUDIOS • ESTILO ELEMENTAL</span>
+                <h1>FORJAMOS MUNDOS.<br><span class="gold-grad">CREAMOS TECNOLOGÍA.</span></h1>
                 <p class="hero-lead">
-                    Cuatro pueblos disputan el rescate de los elementales en medio de un bosque ancestral: captura, resiste y domina el territorio para reclamar la victoria. Este es el pulso épico que define a <strong>ShĀrt Studios</strong>.
+                    Estudio independiente de videojuegos, aplicaciones web y desarrollo digital con una identidad visual épica encabezada por <strong>Elementales</strong>.
                 </p>
                 <div class="hero-btns">
-                    <a href="#elementales" class="btn-relic">Entrar a Elementales</a>
-                    <a href="#universo" class="btn-ghost">Ver Catálogo</a>
-                </div>
-            </div>
-
-            <div class="hero-poster reveal">
-                <div class="poster-frame">
-                    <img src="Portada.jpg" alt="Elementales Pueblos en Guerra" onerror="this.src='jasmentis.jpeg';" />
-                    <div class="poster-caption">
-                        <span>4 PUEBLOS • RESCATE ELEMENTAL</span>
-                        <strong>ELEMENTALES</strong>
-                    </div>
+                    <a href="#productos" class="btn-relic">Explorar Proyectos</a>
+                    <a href="#clientes" class="btn-ghost">Encargar Página Web</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN CENTRAL: ELEMENTALES (MECÁNICA DE RESCATE / CAPTURA) -->
-    <section id="elementales" class="section">
+    <!-- SECCIÓN 1: PROYECTOS PROPIOS (VIDEOJUEGOS Y APLICACIONES WEB) -->
+    <section id="productos" class="section">
         <div class="container">
             <div class="section-head reveal">
-                <span class="kicker">01 // NÚCLEO DE IDENTIDAD VISUAL</span>
-                <h2>Elementales: Batalla en el Bosque</h2>
-                <p>Como robar la bandera, pero en el corazón de los cuatro pueblos: rescata y reúne más elementales que los clanes rivales antes de que caiga la noche.</p>
-            </div>
-
-            <div class="arena-grid reveal">
-                <div class="arena-visual">
-                    <img src="Portada.jpg" alt="Arena de Elementales" onerror="this.style.display='none';" />
-                    <div class="arena-hud">
-                        <div class="hud-pill"><span>MODO</span><strong>RESCATE 4 PUEBLOS</strong></div>
-                        <div class="hud-pill"><span>CONDICIÓN</span><strong>MÁS ELEMENTALES = VICTORIA</strong></div>
-                        <div class="hud-pill"><span>ESCENARIO</span><strong>BOSQUE ANCESTRAL</strong></div>
-                    </div>
-                </div>
-
-                <div class="arena-rules">
-                    <div class="rule-card">
-                        <span class="rule-num">I</span>
-                        <h3>Incursión en el Bosque</h3>
-                        <p>Los cuatro pueblos avanzan desde sus dominios hacia el bosque central donde aguardan los elementales.</p>
-                    </div>
-                    <div class="rule-card">
-                        <span class="rule-num">II</span>
-                        <h3>Rescate & Extracción</h3>
-                        <p>Captura elementales, defiende a tus portadores y arrebata cargas a los pueblos enemigos en combates rápidos.</p>
-                    </div>
-                    <div class="rule-card">
-                        <span class="rule-num">III</span>
-                        <h3>Dominio Total</h3>
-                        <p>El pueblo que asegure todos o la mayor cantidad de elementales al cierre impone su ley sobre el bosque.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ROSTER INTERACTIVO DE PERSONAJES Y GUARDIANES -->
-    <section id="roster" class="section border-line">
-        <div class="container">
-            <div class="section-head reveal">
-                <span class="kicker">02 // LENGUAJE VISUAL DE LOS PUEBLOS</span>
-                <h2>Fuerzas del Bosque & Elementales</h2>
-                <p>Selecciona una figura para proyectar su energía elemental en la escena.</p>
-            </div>
-
-            <div class="character-stage reveal" id="characterStage">
-                <div class="char-preview">
-                    <img id="activeCharImg" src="jasmentis.jpeg" alt="Jasmentis" />
-                </div>
-                <div class="char-info">
-                    <span class="char-faction" id="activeCharFaction">PUEBLO DEL BOSQUE & FLORA</span>
-                    <h3 id="activeCharName">Jasmentis</h3>
-                    <p id="activeCharDesc">Guardián floral de raíces vivas y pulso natural, encarnando la armonía y resistencia del bosque.</p>
-                    <div class="char-tags" id="activeCharTags">
-                        <span>BOSQUE</span><span>RESCATE</span><span>NATURALEZA</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="character-strip reveal">
-                <button class="char-thumb active" data-theme="theme-forest" data-img="jasmentis.jpeg" data-name="Jasmentis" data-faction="PUEBLO DEL BOSQUE & FLORA" data-desc="Guardián floral de raíces vivas y pulso natural, encarnando la armonía y resistencia del bosque." data-tags="BOSQUE|RESCATE|NATURALEZA">
-                    <img src="jasmentis.jpeg" alt="Jasmentis" />
-                    <span>Jasmentis</span>
-                </button>
-
-                <button class="char-thumb" data-theme="theme-water" data-img="Jugadores agua - copia (4).jpeg" data-name="Vanguardia de Agua" data-faction="PUEBLO DE LAS AGUAS" data-desc="Combatiente fluido y letal que surca el bosque con mareas cortantes y emboscadas precisas." data-tags="AGUA|VELOCIDAD|FLUIDEZ">
-                    <img src="Jugadores agua - copia (4).jpeg" alt="Jugador de Agua" />
-                    <span>Agua</span>
-                </button>
-
-                <button class="char-thumb" data-theme="theme-fire" data-img="Jugadores fuego - copia (3).jpeg" data-name="Furia de Fuego" data-faction="PUEBLO ÍGNEO" data-desc="Ofensiva incandescente diseñada para romper líneas enemigas y arrebatar elementales bajo presión." data-tags="FUEGO|ATAQUE|IMPACTO">
-                    <img src="Jugadores fuego - copia (3).jpeg" alt="Jugador de Fuego" />
-                    <span>Fuego</span>
-                </button>
-
-                <button class="char-thumb" data-theme="theme-guardian" data-img="Guardianes - copia.jpeg" data-name="Guardián Alado" data-faction="BASTIÓN ELEMENTAL" data-desc="Centinela acorazado con alas esmeralda que escolta portadores y protege el territorio ganado." data-tags="GUARDIÁN|DEFENSA|ESCOLTA">
-                    <img src="Guardianes - copia (2).jpeg" onerror="this.src='Guardianes - copia.jpeg';" alt="Guardián" />
-                    <span>Guardián</span>
-                </button>
-
-                <button class="char-thumb" data-theme="theme-forest" data-img="Vigilantes del bosque - copia (2).jpeg" data-name="Vigilante del Bosque" data-faction="ANCIANOS DEL BOSQUE" data-desc="Astas de madera viva y mirada ancestral que vigilan los senderos sagrados entre los cuatro pueblos." data-tags="VIGILANTE|RAÍCES|BOSQUE">
-                    <img src="Vigilantes del bosque - copia (2).jpeg" alt="Vigilante del Bosque" />
-                    <span>Vigilante</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CATÁLOGO DE PROYECTOS (ESTILO PÓSTERES VERTICALES) -->
-    <section id="universo" class="section border-line">
-        <div class="container">
-            <div class="section-head reveal">
-                <span class="kicker">03 // ECOSISTEMA SHĀRT STUDIOS</span>
-                <h2>Nuestros Proyectos</h2>
-                <p>Todo bajo el estilo elemental predominante del estudio, salvo <em>Last Line</em> que conserva su identidad propia.</p>
+                <span class="kicker">01 // PROPIEDAD INTELECTUAL & SOFTWARE</span>
+                <h2>Videojuegos & Aplicaciones Web</h2>
+                <p>Haz clic en cualquier proyecto para abrir su ficha completa, historia en formato manga/cómic, personajes y escenarios.</p>
             </div>
 
             <div class="posters-grid">
-                <!-- Elementales -->
-                <article class="poster-card reveal" data-img="Portada.jpg" data-title="Elementales" data-style="ESTILO ELEMENTAL PRINCIPAL">
+                <!-- ELEMENTALES -->
+                <article class="poster-card featured-card reveal" data-project="elementales">
                     <div class="poster-media">
-                        <img src="Portada.jpg" alt="Elementales" onerror="this.src='jasmentis.jpeg';" />
-                        <span class="badge-live">CENTRO DEL ESTUDIO</span>
+                        <img src="Portada.jpeg" alt="Elementales: Pueblos en Guerra" />
+                        <span class="badge-live">VIDEOJUEGO PRINCIPAL</span>
                     </div>
                     <div class="poster-body">
                         <h3>Elementales</h3>
-                        <p>Batalla en el bosque entre 4 pueblos para rescatar y acumular la mayor cantidad de elementales.</p>
+                        <p>Batalla en medio del bosque entre 4 pueblos para rescatar y acumular más elementales que los rivales.</p>
+                        <span class="card-action">Ver historia manga, personajes y mapa →</span>
                     </div>
                 </article>
 
-                <!-- Locked In -->
-                <article class="poster-card reveal" data-img="Jugadores fuego - copia (3).jpeg" data-title="Locked In" data-style="ESTILO ELEMENTAL SHĀRT">
+                <!-- LAST LINE -->
+                <article class="poster-card independent-style reveal" data-project="lastline">
                     <div class="poster-media">
-                        <img src="Jugadores fuego - copia (3).jpeg" alt="Locked In" />
-                        <span class="badge-live">PROYECTO SHĀRT</span>
-                    </div>
-                    <div class="poster-body">
-                        <h3>Locked In</h3>
-                        <p>Enfoque extremo, precisión y tensión competitiva bajo el lenguaje visual épico de ShĀrt Studios.</p>
-                    </div>
-                </article>
-
-                <!-- Last Line (Estilo Propio) -->
-                <article class="poster-card independent-style reveal" data-img="Guardianes - copia.jpeg" data-title="Last Line" data-style="ESTILO INDEPENDIENTE PROPIO">
-                    <div class="poster-media">
-                        <img src="Guardianes - copia.jpeg" alt="Last Line" />
-                        <span class="badge-alt">ESTILO PROPIO</span>
+                        <div class="art-placeholder lastline-art">
+                            <span>LAST LINE</span>
+                        </div>
+                        <span class="badge-alt">VIDEOJUEGO • ESTILO PROPIO</span>
                     </div>
                     <div class="poster-body">
                         <h3>Last Line</h3>
-                        <p>Mantiene su identidad visual y táctica propia dentro del catálogo oficial de ShĀrt Studios.</p>
+                        <p>Proyecto de videojuego con identidad visual independiente dentro del catálogo oficial de ShĀrt Studios.</p>
+                        <span class="card-action">Ver ficha del juego →</span>
                     </div>
                 </article>
 
-                <!-- SkillBridge -->
-                <article class="poster-card reveal" data-img="Jugadores agua - copia (4).jpeg" data-title="SkillBridge" data-style="ESTILO ELEMENTAL SHĀRT">
+                <!-- LOCKED IN -->
+                <article class="poster-card reveal" data-project="lockedin">
                     <div class="poster-media">
-                        <img src="Jugadores agua - copia (4).jpeg" alt="SkillBridge" />
-                        <span class="badge-live">PLATAFORMA</span>
+                        <div class="art-placeholder lockedin-art">
+                            <span>LOCKED IN</span>
+                        </div>
+                        <span class="badge-live">WEB APP DE ESTUDIO</span>
+                    </div>
+                    <div class="poster-body">
+                        <h3>Locked In</h3>
+                        <p>Plataforma web diseñada para estudiar con enfoque profundo, sesiones estructuradas y progreso real.</p>
+                        <span class="card-action">Ver detalles de la app →</span>
+                    </div>
+                </article>
+
+                <!-- SKILLBRIDGE -->
+                <article class="poster-card reveal" data-project="skillbridge">
+                    <div class="poster-media">
+                        <div class="art-placeholder skillbridge-art">
+                            <span>SKILLBRIDGE</span>
+                        </div>
+                        <span class="badge-live">PLATAFORMA WEB</span>
                     </div>
                     <div class="poster-body">
                         <h3>SkillBridge</h3>
-                        <p>Conexión de talento y oportunidades con estética contundente, clara y de alto impacto.</p>
+                        <p>Ecosistema web para conectar talento, habilidades técnicas y oportunidades profesionales.</p>
+                        <span class="card-action">Ver detalles de la app →</span>
                     </div>
                 </article>
 
-                <!-- Looking Money -->
-                <article class="poster-card reveal" data-img="Vigilantes del bosque - copia (2).jpeg" data-title="Looking Money" data-style="ESTILO ELEMENTAL SHĀRT">
+                <!-- LOOKING MONEY -->
+                <article class="poster-card reveal" data-project="lookingmoney">
                     <div class="poster-media">
-                        <img src="Vigilantes del bosque - copia (2).jpeg" alt="Looking Money" />
-                        <span class="badge-live">SISTEMA / WEB</span>
+                        <div class="art-placeholder lookingmoney-art">
+                            <span>LOOKING MONEY</span>
+                        </div>
+                        <span class="badge-live">FINTECH & INVERSIONES</span>
                     </div>
                     <div class="poster-body">
                         <h3>Looking Money</h3>
-                        <p>Control, estrategia y movimiento financiero presentado con la misma fuerza visual del estudio.</p>
-                    </div>
-                </article>
-
-                <!-- Fisioterapia Web -->
-                <article class="poster-card reveal" data-img="jasmentis.jpeg" data-title="Web de Fisioterapia" data-style="ESTILO ELEMENTAL SHĀRT">
-                    <div class="poster-media">
-                        <img src="jasmentis.jpeg" alt="Web de Fisioterapia" />
-                        <span class="badge-live">SERVICIO WEB</span>
-                    </div>
-                    <div class="poster-body">
-                        <h3>Fisioterapia Web</h3>
-                        <p>Sitio web de recuperación, movimiento y bienestar con presencia elegante y coherencia de marca.</p>
+                        <p>Plataforma de inversión y estrategia algorítmica de alto rendimiento con acceso por membresía.</p>
+                        <span class="card-action">Ver plataforma y membresía →</span>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- MEMBRESÍAS CORPORATIVAS -->
+    <!-- SECCIÓN 2: DESARROLLO WEB PARA CLIENTES (SEPARADO DE LOS PROYECTOS PROPIOS) -->
+    <section id="clientes" class="section border-line">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="kicker">02 // SERVICIOS DIGITALES & PORTAFOLIO CLIENTES</span>
+                <h2>Páginas Web Desarrolladas a Medida</h2>
+                <p>Sitios web profesionales creados para negocios, clínicas y marcas que buscan presencia sólida y mantenimiento continuo.</p>
+            </div>
+
+            <div class="clients-grid">
+                <article class="client-card reveal" data-project="fisioterapia">
+                    <div class="client-tag">PORTAFOLIO CLIENTE • SALUD & BIENESTAR</div>
+                    <h3>Clínica & Web de Fisioterapia</h3>
+                    <p>Sitio web profesional diseñado para reservas, presentación de terapias, confianza médica y atención moderna.</p>
+                    <span class="card-action">Ver caso de estudio →</span>
+                </article>
+
+                <article class="client-card reveal">
+                    <div class="client-tag">SERVICIO DISPONIBLE • TU MARCA</div>
+                    <h3>Tu Próxima Página Web</h3>
+                    <p>Diseño, desarrollo y despliegue rápido de sitios web corporativos, landing pages o catálogos con opción de actualización por temporadas.</p>
+                    <a href="#alianzas" class="btn-relic">Cotizar Página Web</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: MEMBRESÍAS (SOLO LOOKING MONEY Y ACTUALIZACIONES WEB POR TEMPORADA) -->
     <section id="membresias" class="section border-line">
         <div class="container">
             <div class="section-head reveal">
-                <span class="kicker">04 // IMPERIO & MEMBRESÍAS</span>
-                <h2>Membresías de Alto Valor</h2>
-                <p>Acuerdos estratégicos y pases corporativos diseñados para escalar a nivel global.</p>
+                <span class="kicker">03 // SUSCRIPCIONES ACTIVAS</span>
+                <h2>Membresías ShĀrt Studios</h2>
+                <p>Programas mensuales enfocados exclusivamente en inversión de alto rendimiento y evolución constante de sitios web.</p>
             </div>
 
-            <div class="tier-grid">
-                <div class="tier-box reveal">
-                    <span class="tier-tag">PACT I // WEB & PRESENCIA</span>
-                    <h3>Sello Web Élite</h3>
-                    <div class="tier-amount">$250,000 <span>USD / año</span></div>
-                    <p>Desarrollo web de alto impacto visual, identidad unificada y ejecución rápida para clientes y marcas.</p>
-                    <a href="#alianzas" class="btn-relic full-w" data-plan="Sello Web Élite ($250,000 USD/año)">Solicitar Pase</a>
-                </div>
-
+            <div class="tier-grid two-cols">
+                <!-- MEMBRESÍA 1: LOOKING MONEY -->
                 <div class="tier-box tier-highlight reveal">
-                    <span class="tier-tag">PACT II // EXPANSIÓN</span>
-                    <h3>Alianza Software & IP</h3>
-                    <div class="tier-amount">$1,000,000 <span>USD / año</span></div>
-                    <p>Desarrollo de software, plataformas y co-producción dentro del ecosistema visual de ShĀrt Studios.</p>
-                    <a href="#alianzas" class="btn-relic full-w" data-plan="Alianza Software & IP ($1,000,000 USD/año)">Activar Alianza</a>
+                    <div>
+                        <span class="tier-tag">MEMBRESÍA FINTECH • LOOKING MONEY</span>
+                        <h3>Acceso Inversionista Pro</h3>
+                        <div class="tier-amount">$950 <span>USD / mes</span></div>
+                        <p>Membresía mensual para operar con las estrategias y herramientas de inversión de <strong>Looking Money</strong>, diseñada para capital que busca escalar con precisión.</p>
+                        <ul class="tier-list">
+                            <li>Acceso completo al panel y estrategias de inversión</li>
+                            <li>Alertas, parámetros y gestión de riesgo en tiempo real</li>
+                            <li>Soporte prioritario y actualizaciones continuas del motor</li>
+                        </ul>
+                    </div>
+                    <a href="#alianzas" class="btn-relic full-w" data-plan="Looking Money - Acceso Inversionista Pro ($950 USD/mes)">Solicitar Membresía</a>
                 </div>
 
+                <!-- MEMBRESÍA 2: ACTUALIZACIONES WEB POR FECHA/TEMPORADA -->
                 <div class="tier-box reveal">
-                    <span class="tier-tag">PACT III // DOMINIO GLOBAL</span>
-                    <h3>Consejo Multimillonario</h3>
-                    <div class="tier-amount">$5,000,000 <span>USD / año</span></div>
-                    <p>Asociación estratégica mayoritaria, licenciamiento de universos y proyectos emblemáticos del estudio.</p>
-                    <a href="#alianzas" class="btn-relic full-w" data-plan="Consejo Multimillonario ($5,000,000 USD/año)">Aplicar al Consejo</a>
+                    <div>
+                        <span class="tier-tag">MEMBRESÍA WEB • TEMPORADAS & FESTIVIDADES</span>
+                        <h3>Web Viva & Temporadas</h3>
+                        <div class="tier-amount">$120 <span>USD / mes</span></div>
+                        <p>Mantenimiento y personalización visual de tu página web según cada fecha especial del año para mantener tu marca siempre fresca y vendiendo.</p>
+                        <ul class="tier-list">
+                            <li>Ambientación especial en <strong>Navidad, Halloween, San Valentín y Black Friday</strong></li>
+                            <li>Cambios de banners, promociones, textos y horarios</li>
+                            <li>Soporte técnico continuo y optimización mensual</li>
+                        </ul>
+                    </div>
+                    <a href="#alianzas" class="btn-relic full-w" data-plan="Membresía Web Viva & Temporadas ($120 USD/mes)">Activar Plan Web</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACTO / ALIANZAS -->
+    <!-- CONTACTO -->
     <section id="alianzas" class="section border-line">
         <div class="container contact-wrap">
             <div class="contact-copy reveal">
-                <span class="kicker">05 // COMANDO CENTRAL</span>
-                <h2>Construyamos algo legendario</h2>
-                <p>Páginas web para mover el proyecto hoy, software, videojuegos o alianzas de gran escala: todo empieza con un mensaje.</p>
+                <span class="kicker">04 // CONTACTO DIRECTO</span>
+                <h2>Hablemos de tu proyecto o membresía</h2>
+                <p>Ya sea que necesites una página web para tu negocio, activar el plan de temporadas o unirte a Looking Money, escríbeme aquí.</p>
             </div>
 
             <form class="relic-form reveal" id="allianceForm">
                 <input type="text" id="nameInput" placeholder="Tu nombre o empresa" required />
                 <input type="email" id="emailInput" placeholder="Correo electrónico" required />
                 <select id="planSelect">
-                    <option value="Encargo de Página Web">Encargo de Página Web</option>
-                    <option value="Proyecto Elementales / Gaming">Proyecto Elementales / Gaming</option>
-                    <option value="Software / SkillBridge / Looking Money">Software / SkillBridge / Looking Money</option>
-                    <option value="Sello Web Élite ($250,000 USD/año)">Sello Web Élite ($250,000 USD/año)</option>
-                    <option value="Alianza Software & IP ($1,000,000 USD/año)">Alianza Software & IP ($1,000,000 USD/año)</option>
-                    <option value="Consejo Multimillonario ($5,000,000 USD/año)">Consejo Multimillonario ($5,000,000 USD/año)</option>
+                    <option value="Encargo de Página Web a Medida">Encargo de Página Web a Medida</option>
+                    <option value="Membresía Web Viva & Temporadas ($120 USD/mes)">Membresía Web Viva & Temporadas ($120 USD/mes)</option>
+                    <option value="Looking Money - Acceso Inversionista Pro ($950 USD/mes)">Looking Money - Acceso Inversionista Pro ($950 USD/mes)</option>
+                    <option value="Información sobre Elementales / Juegos">Información sobre Elementales / Juegos</option>
+                    <option value="Locked In / SkillBridge">Locked In / SkillBridge</option>
                 </select>
-                <textarea id="msgInput" rows="4" placeholder="Cuéntame qué necesitas o qué visión quieres construir..." required></textarea>
-                <button type="submit" class="btn-relic full-w">Enviar Señal</button>
+                <textarea id="msgInput" rows="4" placeholder="Cuéntame qué necesitas..." required></textarea>
+                <button type="submit" class="btn-relic full-w">Enviar Mensaje</button>
                 <p class="form-status" id="formStatus"></p>
             </form>
         </div>
@@ -311,9 +242,18 @@
     <footer class="footer">
         <div class="container footer-inner">
             <strong>ShĀrt Studios</strong>
-            <span>Estilo Elemental • Videojuegos • Software • Web</span>
+            <span>Videojuegos • Aplicaciones Web • Desarrollo a Medida</span>
         </div>
     </footer>
+
+    <!-- MODAL DETALLADO DE PROYECTO (HISTORIA MANGA/CÓMIC, PERSONAJES Y ESCENARIO) -->
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+        <div class="modal-backdrop" id="modalCloseBg"></div>
+        <div class="modal-dialog">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Cerrar">✕</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
