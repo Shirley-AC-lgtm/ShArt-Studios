@@ -803,3 +803,65 @@ h2 {
         display: flex;
     }
 }
+
+/* MANGA / COMIC - MOSTRAR IMAGEN COMPLETA */
+
+.manga-panel img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: 75vh;
+    object-fit: contain !important;
+    object-position: center;
+    background: #050706;
+    border: 2px solid #ffffff;
+    margin: 0 auto;
+}
+
+/* CONTENEDOR DE LA IMAGEN */
+
+.manga-panel {
+    align-items: center;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 960px) {
+    .manga-panel img {
+        width: 100%;
+        height: auto !important;
+        max-height: 75vh;
+        object-fit: contain !important;
+    }
+}
+
+.roster-category {
+    margin-top: 28px;
+    margin-bottom: 32px;
+}
+
+.roster-category-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem; /* Más pequeño que el título principal de sección */
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #34d399;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.modal-chars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 18px;
+}
+
+.modal-char-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top center; /* Evita cortar cabezas o caras */
+    image-rendering: auto;
+    display: block;
+}

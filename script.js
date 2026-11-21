@@ -88,14 +88,50 @@
             mapTitle: 'Escenario: El Bosque Ancestral de los 4 Pueblos',
             mapDesc: 'Mapa dividido en cuatro dominios elementales conectados por senderos boscosos, claros de rescate y santuarios centrales.',
             mapImage: 'Portada.jpg',
-            characters: [
-                { name: 'Jasmentis', role: 'Guardiana Suprema del Bosque', img: 'jasmentis.jpeg' },
-                { name: 'Elemental de Tierra', role: 'Pueblo de la Roca & Raíces', img: 'Elementales.jpeg' },
-                { name: 'Elemental de Agua', role: 'Pueblo de las Mareas', img: 'Elementales - copia (2).jpeg' },
-                { name: 'Elemental de Fuego', role: 'Pueblo Ígneo', img: 'Elementales - copia (3).jpeg' },
-                { name: 'Elemental de Aire', role: 'Pueblo del Viento', img: 'Elementales - copia.jpeg' },
-                { name: 'Guardián Alado', role: 'Centinela & Escolta', img: 'Guardianes - copia.jpeg' },
-                { name: 'Vigilante del Bosque', role: 'Protector de los Senderos', img: 'Vigilantes del bosque - copia (2).jpeg' }
+            characterGroups: [
+                {
+                    category: 'Jasmentis',
+                    items: [
+                        { name: 'Jasmentis', role: 'Guardiana Suprema del Bosque', img: 'jasmentis.jpeg' }
+                    ]
+                },
+                {
+                    category: 'Elementales',
+                    items: [
+                        { name: 'Elemental de Tierra', role: 'Pueblo de la Roca & Raíces', img: 'Elementales.jpeg' },
+                        { name: 'Elemental de Agua', role: 'Pueblo de las Mareas', img: 'Elementales - copia (2).jpeg' },
+                        { name: 'Elemental de Fuego', role: 'Pueblo Ígneo', img: 'Elementales - copia (3).jpeg' },
+                        { name: 'Elemental de Aire', role: 'Pueblo del Viento', img: 'Elementales - copia.jpeg' }
+                    ]
+                },
+                {
+                    category: 'Guardianes',
+                    items: [
+                        { name: 'Guardián Alado', role: 'Centinela & Escolta', img: 'Guardianes - copia.jpeg' }
+                    ]
+                },
+                {
+                    category: 'Seres del Bosque',
+                    items: [
+                        { name: 'Vigilante del Bosque', role: 'Protector de los Senderos', img: 'Vigilantes del bosque - copia (2).jpeg' }
+                    ]
+                },
+                {
+                    category: 'Pueblo Fuego',
+                    items: []
+                },
+                {
+                    category: 'Pueblo Aire',
+                    items: []
+                },
+                {
+                    category: 'Pueblo Tierra',
+                    items: []
+                },
+                {
+                    category: 'Pueblo Agua',
+                    items: []
+                }
             ]
         },
         lastline: {
@@ -120,8 +156,9 @@
         },
         fisioterapia: {
             kicker: 'DESARROLLO WEB PARA CLIENTE',
-            title: 'Clínica & Web de Fisioterapia',
-            summary: 'Sitio web desarrollado a medida para servicios de fisioterapia y rehabilitación, con presentación clara de tratamientos, confianza profesional y contacto rápido para pacientes.'
+            title: 'Salud en Movimiento • Clínica & Web de Fisioterapia',
+            summary: 'Sitio web desarrollado a medida para servicios de fisioterapia y rehabilitación, con presentación clara de tratamientos, confianza profesional y agendamiento rápido por WhatsApp para pacientes.',
+            liveUrl: 'https://salud-en-movimiento.onrender.com'
         }
     };
 
@@ -162,6 +199,13 @@
         <span class="kicker">${data.kicker}</span>
         <h2>${data.title}</h2>
         <p>${data.summary}</p>
+        ${data.liveUrl ? `
+          <div class="modal-actions" style="margin-top: 16px;">
+            <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-relic">
+              Visitar sitio en vivo ↗
+            </a>
+          </div>
+        ` : ''}
       </div>
     `;
 
@@ -174,21 +218,28 @@
       `;
         }
 
-        if (data.characters) {
+        if (data.characterGroups) {
             html += `
         <div class="modal-section">
           <h3>Personajes & Clases</h3>
-          <div class="modal-chars-grid">
-            ${data.characters.map(c => `
-              <div class="modal-char-card">
-                <img src="${c.img}" alt="${c.name}" onerror="this.src='Portada.jpg';" />
-                <div class="info">
-                  <h4>${c.name}</h4>
-                  <span>${c.role}</span>
+          ${data.characterGroups
+                    .filter(group => Array.isArray(group.items) && group.items.length > 0)
+                    .map(group => `
+                <div class="roster-category">
+                  <h4 class="roster-category-title">${group.category}</h4>
+                  <div class="modal-chars-grid">
+                    ${group.items.map(c => `
+                      <div class="modal-char-card">
+                        <img src="${c.img}" alt="${c.name}" onerror="this.src='Portada.jpg';" />
+                        <div class="info">
+                          <h4>${c.name}</h4>
+                          <span>${c.role}</span>
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
                 </div>
-              </div>
-            `).join('')}
-          </div>
+              `).join('')}
         </div>
       `;
         }
