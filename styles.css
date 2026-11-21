@@ -12,7 +12,9 @@
     --font-body: 'Inter', sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -23,11 +25,13 @@ html {
     background: var(--bg-deep);
     color: var(--text-main);
     font-family: var(--font-body);
+    overflow-x: hidden;
 }
 
 body {
     overflow-x: hidden;
     line-height: 1.6;
+    max-width: 100%;
 }
 
 #elemental-canvas {
@@ -42,7 +46,7 @@ body {
 .container {
     position: relative;
     z-index: 2;
-    width: min(1220px, 90%);
+    width: min(1220px, 92%);
     margin: 0 auto;
 }
 
@@ -51,7 +55,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(6, 9, 8, 0.88);
+    background: rgba(6, 9, 8, 0.92);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
 }
@@ -61,30 +65,34 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 74px;
+    gap: 12px;
 }
 
 .brand-link {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     text-decoration: none;
     color: var(--text-main);
+    min-width: 0;
 }
 
 .brand-fallback {
     font-family: var(--font-epic);
-    font-size: 1.55rem;
+    font-size: clamp(1.15rem, 4vw, 1.55rem);
     font-weight: 800;
     letter-spacing: 0.04em;
+    white-space: nowrap;
 }
 
 .brand-sub {
     font-family: var(--font-display);
-    font-size: 0.72rem;
-    letter-spacing: 0.28em;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
     color: var(--accent);
     border-left: 1px solid var(--border);
     padding-left: 10px;
+    white-space: nowrap;
 }
 
 .nav-menu {
@@ -110,6 +118,7 @@ body {
     border: 1px solid var(--accent);
     color: var(--accent) !important;
     border-radius: 4px;
+    text-align: center;
 }
 
     .nav-cta:hover {
@@ -120,22 +129,26 @@ body {
 .burger {
     display: none;
     flex-direction: column;
+    justify-content: center;
     gap: 6px;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 6px;
+    flex-shrink: 0;
 }
 
     .burger span {
         width: 24px;
         height: 2px;
         background: #ffffff;
+        display: block;
     }
 
 /* HERO CON FONDO CLARO Y NÍTIDO */
 .hero-stage {
     position: relative;
-    min-height: 92vh;
+    min-height: 88vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -156,17 +169,19 @@ body {
     filter: saturate(1.18) contrast(1.05) brightness(0.95);
 }
 
-/* Velo sutil para que el arte se vea claro y el texto sea 100% legible */
 .hero-vignette {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(6, 9, 8, 0.72) 0%, rgba(6, 9, 8, 0.22) 52%, rgba(6, 9, 8, 0.05) 100%), linear-gradient(180deg, rgba(6, 9, 8, 0.10) 0%, rgba(6, 9, 8, 0.76) 100%);
+    background: linear-gradient(90deg, rgba(6, 9, 8, 0.76) 0%, rgba(6, 9, 8, 0.28) 55%, rgba(6, 9, 8, 0.08) 100%), linear-gradient(180deg, rgba(6, 9, 8, 0.15) 0%, rgba(6, 9, 8, 0.82) 100%);
 }
 
 .hero-overlay {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
-    padding: 90px 0;
+    padding: 80px 0;
+    width: 100%;
 }
 
 .hero-content {
@@ -177,19 +192,19 @@ body {
 .relic-tag {
     display: inline-block;
     font-family: var(--font-display);
-    font-size: 0.75rem;
-    letter-spacing: 0.24em;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
     color: var(--accent);
     border: 1px solid var(--accent);
     padding: 6px 14px;
     margin-bottom: 18px;
-    background: rgba(6, 9, 8, 0.65);
+    background: rgba(6, 9, 8, 0.72);
 }
 
 h1 {
     font-family: var(--font-epic);
-    font-size: clamp(2.4rem, 5vw, 4.2rem);
-    line-height: 1.06;
+    font-size: clamp(2.1rem, 6vw, 4.2rem);
+    line-height: 1.08;
     font-weight: 800;
     margin-bottom: 18px;
 }
@@ -202,32 +217,33 @@ h1 {
 
 .hero-lead {
     color: #e4ece8;
-    font-size: 1.06rem;
+    font-size: clamp(0.96rem, 2.2vw, 1.06rem);
     max-width: 54ch;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .hero-btns {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 12px;
 }
 
 .btn-relic {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 13px 26px;
+    padding: 13px 24px;
     background: var(--accent);
     color: #050807;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     text-decoration: none;
     border: none;
     cursor: pointer;
     clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
 }
 
     .btn-relic:hover {
@@ -239,13 +255,16 @@ h1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 13px 24px;
+    padding: 13px 22px;
     border: 1px solid rgba(255, 255, 255, 0.45);
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    background: rgba(6, 9, 8, 0.55);
+    font-size: 0.9rem;
+    background: rgba(6, 9, 8, 0.6);
     backdrop-filter: blur(6px);
+    cursor: pointer;
+    text-align: center;
 }
 
     .btn-ghost:hover {
@@ -254,7 +273,7 @@ h1 {
 
 /* SECCIONES */
 .section {
-    padding: 90px 0;
+    padding: 84px 0;
 }
 
 .border-line {
@@ -263,22 +282,22 @@ h1 {
 
 .section-head {
     max-width: 720px;
-    margin-bottom: 42px;
+    margin-bottom: 38px;
 }
 
 .kicker {
     display: block;
     font-family: var(--font-display);
-    font-size: 0.75rem;
-    letter-spacing: 0.24em;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
     color: var(--accent);
     margin-bottom: 10px;
 }
 
 h2 {
     font-family: var(--font-epic);
-    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
-    line-height: 1.12;
+    font-size: clamp(1.75rem, 4vw, 2.8rem);
+    line-height: 1.14;
     margin-bottom: 12px;
 }
 
@@ -301,6 +320,7 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    min-width: 0;
 }
 
     .poster-card:hover {
@@ -319,7 +339,7 @@ h2 {
 
 .poster-media {
     position: relative;
-    height: 240px;
+    height: 220px;
     overflow: hidden;
     background: #0b120f;
 }
@@ -336,7 +356,6 @@ h2 {
     transform: scale(1.04);
 }
 
-/* Fondos estilizados para proyectos sin imagen aún */
 .art-placeholder {
     width: 100%;
     height: 100%;
@@ -344,7 +363,7 @@ h2 {
     align-items: center;
     justify-content: center;
     font-family: var(--font-epic);
-    font-size: 1.55rem;
+    font-size: 1.45rem;
     font-weight: 800;
     letter-spacing: 0.14em;
     color: rgba(255, 255, 255, 0.88);
@@ -381,7 +400,7 @@ h2 {
     font-weight: 700;
     letter-spacing: 0.14em;
     padding: 4px 10px;
-    background: rgba(6, 9, 8, 0.9);
+    background: rgba(6, 9, 8, 0.92);
     color: var(--accent);
     border: 1px solid var(--accent);
 }
@@ -392,7 +411,7 @@ h2 {
 }
 
 .poster-body {
-    padding: 22px;
+    padding: 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -401,7 +420,7 @@ h2 {
 
     .poster-body h3 {
         font-family: var(--font-epic);
-        font-size: 1.35rem;
+        font-size: 1.28rem;
         margin-bottom: 8px;
     }
 
@@ -428,9 +447,10 @@ h2 {
 .client-card {
     background: var(--bg-panel);
     border: 1px solid var(--border);
-    padding: 30px;
+    padding: 26px;
     cursor: pointer;
     transition: border-color 0.25s ease;
+    min-width: 0;
 }
 
     .client-card:hover {
@@ -447,7 +467,7 @@ h2 {
 
 .client-card h3 {
     font-family: var(--font-epic);
-    font-size: 1.45rem;
+    font-size: 1.38rem;
     margin-bottom: 10px;
 }
 
@@ -467,10 +487,11 @@ h2 {
 .tier-box {
     background: var(--bg-panel);
     border: 1px solid var(--border);
-    padding: 32px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 0;
 }
 
 .tier-highlight {
@@ -486,13 +507,13 @@ h2 {
 
 .tier-box h3 {
     font-family: var(--font-epic);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 8px 0 12px;
 }
 
 .tier-amount {
     font-family: var(--font-display);
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 14px;
@@ -514,7 +535,7 @@ h2 {
     list-style: none;
     display: grid;
     gap: 8px;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
     font-size: 0.9rem;
     color: #d8e3de;
 }
@@ -532,7 +553,7 @@ h2 {
 .contact-wrap {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    gap: 42px;
+    gap: 36px;
     align-items: start;
 }
 
@@ -546,18 +567,22 @@ h2 {
     gap: 14px;
     background: var(--bg-panel);
     border: 1px solid var(--border);
-    padding: 28px;
+    padding: 24px;
+    min-width: 0;
 }
 
     .relic-form input,
     .relic-form select,
     .relic-form textarea {
         width: 100%;
+        min-width: 0;
         padding: 12px 14px;
         background: rgba(5, 8, 7, 0.92);
         border: 1px solid var(--border);
         color: #ffffff;
         font-family: var(--font-body);
+        font-size: 0.95rem;
+        border-radius: 4px;
     }
 
 .form-status {
@@ -569,7 +594,7 @@ h2 {
 /* FOOTER */
 .footer {
     border-top: 1px solid var(--border);
-    padding: 28px 0;
+    padding: 26px 0;
     position: relative;
     z-index: 2;
 }
@@ -591,7 +616,7 @@ h2 {
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 14px;
 }
 
     .project-modal.open {
@@ -601,20 +626,21 @@ h2 {
 .modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(3, 5, 4, 0.88);
+    background: rgba(3, 5, 4, 0.9);
     backdrop-filter: blur(10px);
 }
 
 .modal-dialog {
     position: relative;
     z-index: 2;
-    width: min(1040px, 96%);
+    width: min(1040px, 100%);
     max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
     background: #0a100d;
     border: 1px solid var(--accent);
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.95);
-    padding: 34px;
+    padding: 28px;
 }
 
 .modal-close {
@@ -628,6 +654,7 @@ h2 {
     height: 38px;
     cursor: pointer;
     font-size: 1.1rem;
+    z-index: 5;
 }
 
     .modal-close:hover {
@@ -636,7 +663,8 @@ h2 {
     }
 
 .modal-header {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
+    padding-right: 42px;
 }
 
     .modal-header h2 {
@@ -644,14 +672,14 @@ h2 {
     }
 
 .modal-section {
-    margin-top: 30px;
-    padding-top: 24px;
+    margin-top: 26px;
+    padding-top: 22px;
     border-top: 1px solid var(--border);
 }
 
     .modal-section h3 {
         font-family: var(--font-epic);
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         color: var(--accent);
         margin-bottom: 14px;
     }
@@ -660,53 +688,82 @@ h2 {
 .manga-reader {
     background: #050706;
     border: 1px solid var(--border);
-    padding: 20px;
+    padding: 18px;
 }
 
 .manga-panel {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
     gap: 20px;
     align-items: center;
 }
 
     .manga-panel img {
+        display: block;
         width: 100%;
-        max-height: 320px;
-        object-fit: cover;
+        height: auto;
+        max-height: 70vh;
+        object-fit: contain;
+        object-position: center;
+        background: #050706;
         border: 2px solid #ffffff;
+        margin: 0 auto;
     }
 
 .manga-caption-box {
     background: #101714;
     border-left: 3px solid var(--accent);
     padding: 18px;
+    min-width: 0;
 }
 
 .manga-chapter {
     font-family: var(--font-display);
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
     color: var(--gold);
 }
 
 .manga-caption-box h4 {
     font-family: var(--font-epic);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin: 6px 0 10px;
+}
+
+.manga-caption-box p {
+    font-size: 0.92rem;
+    color: var(--text-dim);
+    overflow-wrap: break-word;
 }
 
 .manga-controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     margin-top: 16px;
 }
 
-/* GALERÍA DE PERSONAJES EN MODAL */
+/* CATEGORÍAS Y GALERÍA DE PERSONAJES EN MODAL */
+.roster-category {
+    margin-top: 24px;
+    margin-bottom: 28px;
+}
+
+.roster-category-title {
+    font-family: var(--font-epic);
+    font-size: 1.02rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(52, 211, 153, 0.25);
+}
+
 .modal-chars-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     gap: 16px;
 }
 
@@ -714,12 +771,14 @@ h2 {
     background: #060908;
     border: 1px solid var(--border);
     overflow: hidden;
+    min-width: 0;
 }
 
     .modal-char-card img {
         width: 100%;
-        height: 210px;
+        aspect-ratio: 3 / 4;
         object-fit: cover;
+        object-position: top center;
         display: block;
     }
 
@@ -729,18 +788,21 @@ h2 {
 
     .modal-char-card h4 {
         font-family: var(--font-epic);
-        font-size: 1rem;
+        font-size: 0.98rem;
+        margin-bottom: 2px;
     }
 
     .modal-char-card span {
         font-size: 0.76rem;
         color: var(--accent);
+        display: block;
     }
 
 .modal-map-img {
     width: 100%;
     max-height: 360px;
-    object-fit: cover;
+    object-fit: contain;
+    background: #050706;
     border: 1px solid var(--border);
     margin-top: 10px;
 }
@@ -757,30 +819,15 @@ h2 {
         transform: translateY(0);
     }
 
+/* TABLET Y PANTALLAS MEDIANAS (<= 960px) */
 @media (max-width: 960px) {
     .posters-grid,
     .clients-grid,
     .tier-grid.two-cols,
     .contact-wrap,
     .manga-panel {
-        display: grid;
-        grid-template-columns: minmax(280px, 1.15fr) 1fr;
-        gap: 24px;
-        align-items: center;
-    }
-
-        .manga-panel img {
-            width: 100%;
-            height: auto;
-            max-height: 68vh;
-            object-fit: contain;
-            border: 2px solid #ffffff;
-            background: #050706;
-            display: block;
-        }
-
-    .modal-chars-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .nav-menu {
@@ -790,7 +837,9 @@ h2 {
         left: 0;
         right: 0;
         flex-direction: column;
-        background: #060908;
+        align-items: stretch;
+        gap: 16px;
+        background: rgba(6, 9, 8, 0.98);
         padding: 22px;
         border-bottom: 1px solid var(--border);
     }
@@ -804,64 +853,96 @@ h2 {
     }
 }
 
-/* MANGA / COMIC - MOSTRAR IMAGEN COMPLETA */
-
-.manga-panel img {
-    display: block;
-    width: 100%;
-    height: auto !important;
-    max-height: 75vh;
-    object-fit: contain !important;
-    object-position: center;
-    background: #050706;
-    border: 2px solid #ffffff;
-    margin: 0 auto;
-}
-
-/* CONTENEDOR DE LA IMAGEN */
-
-.manga-panel {
-    align-items: center;
-}
-
-/* PANTALLAS PEQUEÑAS */
-
-@media (max-width: 960px) {
-    .manga-panel img {
-        width: 100%;
-        height: auto !important;
-        max-height: 75vh;
-        object-fit: contain !important;
+/* TELÉFONOS (<= 600px) */
+@media (max-width: 600px) {
+    .topbar-inner {
+        height: 66px;
     }
-}
 
-.roster-category {
-    margin-top: 28px;
-    margin-bottom: 32px;
-}
+    .brand-sub {
+        display: none;
+    }
 
-.roster-category-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.05rem; /* Más pequeño que el título principal de sección */
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #34d399;
-    margin-bottom: 14px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(52, 211, 153, 0.25);
-}
+    .nav-menu {
+        top: 66px;
+        padding: 18px 20px;
+    }
 
-.modal-chars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 18px;
-}
+    .hero-stage {
+        min-height: 82vh;
+    }
 
-.modal-char-card img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    object-position: top center; /* Evita cortar cabezas o caras */
-    image-rendering: auto;
-    display: block;
+    .hero-overlay {
+        padding: 56px 0;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-relic,
+    .btn-ghost {
+        width: 100%;
+        padding: 12px 18px;
+    }
+
+    .section {
+        padding: 56px 0;
+    }
+
+    .section-head {
+        margin-bottom: 26px;
+    }
+
+    .poster-media {
+        height: 190px;
+    }
+
+    .poster-body,
+    .client-card,
+    .tier-box,
+    .relic-form {
+        padding: 20px;
+    }
+
+    .tier-amount {
+        font-size: 1.7rem;
+    }
+
+    .modal-dialog {
+        padding: 18px 14px;
+        max-height: 92vh;
+    }
+
+    .modal-header {
+        padding-right: 36px;
+    }
+
+    .manga-reader {
+        padding: 12px;
+    }
+
+    .manga-caption-box {
+        padding: 14px;
+    }
+
+    .manga-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-chars-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .modal-char-card .info {
+        padding: 10px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
 }
